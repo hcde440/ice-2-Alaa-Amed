@@ -1,4 +1,6 @@
-// Sketch with two feeds: a feed for button press and a feed for photoresistors 
+// program for sending momentary button press and photoresistor data to Adafruit IO.
+// The output is displayed on a dashboard (https://io.adafruit.com/alaa_amed/dashboards/alaa) 
+// in the form of two gauges, one for button press and the other one is for the photoresistor 
 
 /************************** Configuration ***********************************/
 
@@ -22,9 +24,9 @@ bool last1 = false;
 int current = 0;
 int last = -1;
 
-// set up the 'analog' feed
+// set up the 'analog' feed for the photoresistor 
 AdafruitIO_Feed *analog = io.feed("analog");
-// set up the 'digital' feed
+// set up the 'digital' feed for the button 
 AdafruitIO_Feed *digital = io.feed("digital");
 
 void setup() {
